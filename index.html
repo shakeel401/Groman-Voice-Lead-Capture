@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta http-equiv="Permissions-Policy" content="microphone=(self), camera=(self)" />
+  <title>Groman Voice Lead Capture Test</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .page-layout {
+      width: 100%;
+      min-height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .test-container {
+      width: 100%;
+      max-width: 520px;
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #86efac;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .notice {
+      display: none;
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #fff7ed;
+      color: #9a3412;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .test-script {
+      margin: 18px 0;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      text-align: left;
+      color: #dbeafe;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .test-script strong {
+      color: #ffffff;
+    }
+
+    .widget-wrapper {
+      width: 100%;
+      min-height: 230px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    elevenlabs-convai {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .footer {
+      margin-top: 16px;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+        align-items: flex-start;
+      }
+
+      .page-layout {
+        min-height: auto;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .test-container {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .widget-wrapper {
+        justify-content: flex-start;
+        min-height: 220px;
+      }
+
+      elevenlabs-convai {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-layout">
+    <main class="test-container">
+      <div class="badge">TEST ASSISTANT</div>
+
+      <h1>Groman Voice Lead Capture Test</h1>
+
+      <p>
+        Use this page to test the copied ElevenLabs voice assistant and verify that
+        lead details are sent to the n8n email notification workflow after each conversation.
+      </p>
+
+      <div id="localWarning" class="notice">
+        This page is currently opened as a local file or insecure URL. The voice widget usually needs a real HTTPS website URL to request microphone permission correctly. Upload this file to Vercel, Netlify, your website, or test from localhost during development.
+      </div>
+
+      <div class="test-script">
+        <strong>Suggested test message:</strong><br />
+        Hi, my name is Muhammad Shakeel. I run an AI chatbot and AI agent development business in Burewala, Pakistan. I need a voice assistant to answer customer questions, qualify leads, schedule appointments, and explain my services. My phone number is +92 300 1234567. My email is shakeel@gmail.com. Please contact me with pricing and available options.
+      </div>
+
+      <div class="widget-wrapper">
+        <elevenlabs-convai agent-id="agent_0201kwmxa5dsfwe8wcrfmdyqmmp8"></elevenlabs-convai>
+      </div>
+
+      <div class="footer">
+        Copied assistant: Groman Voice Lead Capture Test - Shakeel
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const protocol = window.location.protocol;
+      const isLocalFile = protocol === "file:" || protocol === "content:";
+      const isSecure =
+        window.isSecureContext ||
+        protocol === "https:" ||
+        window.location.hostname === "localhost";
+
+      if (isLocalFile || !isSecure) {
+        document.getElementById("localWarning").style.display = "block";
+      }
+    })();
+  </script>
+
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
