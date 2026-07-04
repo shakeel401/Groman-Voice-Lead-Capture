@@ -82,21 +82,6 @@
       line-height: 1.5;
     }
 
-    .widget-wrapper {
-      width: 100%;
-      min-height: 230px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    elevenlabs-convai {
-      width: 100%;
-      max-width: 400px;
-      margin-left: 0;
-      margin-right: auto;
-    }
-
     .footer {
       margin-top: 24px;
       font-size: .82rem;
@@ -104,9 +89,24 @@
       text-align: left;
     }
 
+    .assistant-widget {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 9999;
+      width: auto;
+      max-width: 420px;
+    }
+
+    .assistant-widget elevenlabs-convai {
+      width: 100%;
+      max-width: 420px;
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 14px;
+        padding-bottom: 120px;
       }
 
       .page-layout {
@@ -129,15 +129,16 @@
         font-size: .92rem;
       }
 
-      .widget-wrapper {
-        justify-content: flex-start;
+      .assistant-widget {
+        right: 14px;
+        bottom: 14px;
+        left: auto;
+        max-width: calc(100vw - 28px);
       }
 
-      elevenlabs-convai {
+      .assistant-widget elevenlabs-convai {
         width: 100%;
         max-width: 100%;
-        margin-left: 0;
-        margin-right: auto;
       }
     }
   </style>
@@ -161,14 +162,14 @@
         widget requires HTTPS or localhost to access the microphone correctly.
       </div>
 
-      <div class="widget-wrapper">
-        <elevenlabs-convai agent-id="agent_0201kwmxa5dsfwe8wcrfmdyqmmp8"></elevenlabs-convai>
-      </div>
-
       <div class="footer">
         Groman Voice Lead Capture Test • Powered by ElevenLabs
       </div>
     </main>
+  </div>
+
+  <div class="assistant-widget">
+    <elevenlabs-convai agent-id="agent_0201kwmxa5dsfwe8wcrfmdyqmmp8"></elevenlabs-convai>
   </div>
 
   <script>
